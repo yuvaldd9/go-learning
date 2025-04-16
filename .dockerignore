@@ -1,0 +1,7 @@
+# Exclude files from being copied into the Docker image
+.git
+*.log
+*.md
+*.test
+*.swp
+vendor/
