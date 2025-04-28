@@ -1,6 +1,7 @@
 package core
 
 import (
+	"fmt"
 	"math"
 	"sort"
 	"sync"
@@ -33,6 +34,8 @@ func GetSimilarPersons(input [256]float64, storage *storage.MemoryStore, topN in
 	results := make(chan MatchResult, len(*all)) // Buffered so goroutines don't block
 
 	var wg sync.WaitGroup
+	total := len(*all)
+	fmt.Printf("Starting %d goroutines for similarity calculations...\n", total)
 	for _, person := range *all {
 		wg.Add(1)
 

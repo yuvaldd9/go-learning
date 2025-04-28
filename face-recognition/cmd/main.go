@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	store, err := storage.NewMemoryStore("./persons.db", 10000)
+	store, err := storage.NewMemoryStore("./persons.db", 1000000)
 	if store == nil || err != nil {
 		panic("Failed to create memory store")
 	}
